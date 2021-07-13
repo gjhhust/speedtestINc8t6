@@ -2,8 +2,8 @@
 #include "bsp_GeneralTim.h"
 
 // 定时器输入捕获用户自定义变量结构体定义
-TIM_ICUserValueTypeDef TIM_ICUserValueStructure1 = {0,0,0,0};
-TIM_ICUserValueTypeDef TIM_ICUserValueStructure2 = {0,0,0,0};
+TIM_ICUserValueTypeDef TIM_ICUserValueStructure1 = {0,0,0,0};//tim2 CH1
+TIM_ICUserValueTypeDef TIM_ICUserValueStructure2 = {0,0,0,0};//tim2 CH2
 
 
 
@@ -90,6 +90,7 @@ static void GENERAL_TIM_Mode_Config(void)
 //////////////通道1	
 	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0;
 	GPIO_Init(GPIOA,&GPIO_InitStructure);
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPD;
 	TIM_ICInitStructure.TIM_Channel = TIM_Channel_1;
 	TIM_ICInit(TIM2, &TIM_ICInitStructure);
 	TIM_ITConfig (GENERAL_TIM, TIM_IT_CC1 , ENABLE );
@@ -97,10 +98,29 @@ static void GENERAL_TIM_Mode_Config(void)
 //////////////通道2
 	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_1;
 	GPIO_Init(GPIOA,&GPIO_InitStructure);
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPD;
 	TIM_ICInitStructure.TIM_Channel = TIM_Channel_2;
 	TIM_ICInit(TIM2, &TIM_ICInitStructure);
 	TIM_ClearFlag(GENERAL_TIM,TIM_IT_CC2);
 	TIM_ITConfig (GENERAL_TIM, TIM_IT_CC2 , ENABLE );
+	
+	//////////////通道3
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_2;
+	GPIO_Init(GPIOA,&GPIO_InitStructure);
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPD;
+	TIM_ICInitStructure.TIM_Channel = TIM_Channel_3;
+	TIM_ICInit(TIM2, &TIM_ICInitStructure);
+	TIM_ClearFlag(GENERAL_TIM,TIM_IT_CC3);
+	TIM_ITConfig (GENERAL_TIM, TIM_IT_CC3 , ENABLE );
+	
+	//////////////通道4
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_3;
+	GPIO_Init(GPIOA,&GPIO_InitStructure);
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPD;
+	TIM_ICInitStructure.TIM_Channel = TIM_Channel_4;
+	TIM_ICInit(TIM2, &TIM_ICInitStructure);
+	TIM_ClearFlag(GENERAL_TIM,TIM_IT_CC4);
+	TIM_ITConfig (GENERAL_TIM, TIM_IT_CC4 , ENABLE );
 	
 	// 清除更新和捕获中断标志位
   TIM_ClearFlag(GENERAL_TIM, TIM_FLAG_Update);	
@@ -114,7 +134,8 @@ static void GENERAL_TIM_Mode_Config(void)
 void GENERAL_TIM_Init(void)
 {
 	GENERAL_TIM_NVIC_Config();
-	GENERAL_TIM_Mode_Config();		
+	GENERAL_TIM_Mode_Config();
+	
 }
 
 /*********************************************END OF FILE**********************/

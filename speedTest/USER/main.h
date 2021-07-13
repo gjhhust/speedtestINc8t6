@@ -11,8 +11,18 @@
 #include "led.h"
 #include "bsp_GeneralTim.h" 
 
-
-
+void TIM2_CaptureCallBack(void);
+typedef struct{
+	uint8_t TIM2_CH1;
+	uint8_t TIM2_CH2;
+	uint8_t TIM2_CH3;
+	uint8_t TIM2_CH4;
+	
+	uint8_t TIM3_CH1;
+	uint8_t TIM3_CH2;
+	uint8_t TIM3_CH3;
+	uint8_t TIM3_CH4;
+}Flag;
 
 
 #endif
