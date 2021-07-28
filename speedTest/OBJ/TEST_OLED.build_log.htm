@@ -21,7 +21,7 @@ Target DLL:      Segger\JL2CM3.dll V2.99.18.0
 Dialog DLL:      TARMSTM.DLL V1.66.0.0
  
 <h2>Project:</h2>
-C:\Users\LanLanLan1927\Desktop\speedtestINc8t6-17424618cc12326c9511de7795c623ea5d52cafe\speedTest\USER\OLED.uvprojx
+C:\Users\LanLanLan1927\Desktop\测试车速工程\STM32speedtext\speedTest\USER\OLED.uvprojx
 Project File Date:  07/13/2021
 
 <h2>Output:</h2>
@@ -34,13 +34,15 @@ main.c(127): warning:  #223-D: function "sprintf" declared implicitly
   				sprintf(a_average, "%f",sum_a);
 main.c(69): warning:  #177-D: variable "j"  was declared but never referenced
   		short i,j=0;
+main.c(71): warning:  #177-D: variable "TIM_PscCLK"  was declared but never referenced
+  		uint32_t TIM_PscCLK = 72000 / (GENERAL_TIM_PSC+1);
 main.c(360): warning:  #1-D: last line of file ends without a newline
   }
-main.c: 4 warnings, 0 errors
+main.c: 5 warnings, 0 errors
 linking...
-Program Size: Code=19642 RO-data=2586 RW-data=512 ZI-data=2312  
+Program Size: Code=20072 RO-data=2584 RW-data=512 ZI-data=2312  
 FromELF: creating hex file...
-"..\OBJ\TEST_OLED.axf" - 0 Error(s), 4 Warning(s).
+"..\OBJ\TEST_OLED.axf" - 0 Error(s), 5 Warning(s).
 
 <h2>Software Packages used:</h2>
 

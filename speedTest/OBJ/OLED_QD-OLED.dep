@@ -1,6 +1,6 @@
 Dependencies for Project 'OLED', Target 'QD-OLED': (DO NOT MODIFY !)
 CompilerVersion: 5060750::V5.06 update 6 (build 750)::ARMCC
-F (.\main.c)(0x60F4450B)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I ..\HARDWARE\LED -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\STM32F10x_FWLib\inc -I ..\CORE -I ..\HARDWARE\KEY -I ..\HARDWARE\OLED -I .\text -I .\tim -I .\speedtext -I .\LED -I .\GeneralTim-I.\RTE\_QD-OLED-ID:\keilFile\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-ID:\keilFile\ARM\CMSIS\Include-ID:\keilFile\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0-D__UVISION_VERSION="529" -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o ..\obj\main.o --omf_browse ..\obj\main.crf --depend ..\obj\main.d)
+F (.\main.c)(0x60F54097)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I ..\HARDWARE\LED -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\STM32F10x_FWLib\inc -I ..\CORE -I ..\HARDWARE\KEY -I ..\HARDWARE\OLED -I .\text -I .\tim -I .\speedtext -I .\LED -I .\GeneralTim-I.\RTE\_QD-OLED-ID:\keilFile\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-ID:\keilFile\ARM\CMSIS\Include-ID:\keilFile\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0-D__UVISION_VERSION="529" -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o ..\obj\main.o --omf_browse ..\obj\main.crf --depend ..\obj\main.d)
 I (main.h)(0x60F44310)
 I (stm32f10x.h)(0x60EDA524)
 I (..\CORE\core_cm3.h)(0x60EDA524)

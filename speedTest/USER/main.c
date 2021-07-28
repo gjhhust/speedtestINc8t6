@@ -85,21 +85,21 @@ int main(void)
 			if(TIME_SAVE.states == 8 && show_flag==0)
 			{
 				//time[1]=TIME_SAVE.time1/TIM_PscCLK;//算出来ms
-				time[2]=TIME_SAVE.time2/TIM_PscCLK;
-				time[3]=TIME_SAVE.time3/TIM_PscCLK;
-				time[4]=TIME_SAVE.time4/TIM_PscCLK;
-				time[5]=TIME_SAVE.time5/TIM_PscCLK;
-				time[6]=TIME_SAVE.time6/TIM_PscCLK;
-				time[7]=TIME_SAVE.time7/TIM_PscCLK;
+				time[2]=TIME_SAVE.time2/1000.0f;
+				time[3]=TIME_SAVE.time3/1000.0f;
+				time[4]=TIME_SAVE.time4/1000.0f;
+				time[5]=TIME_SAVE.time5/1000.0f;
+				time[6]=TIME_SAVE.time6/1000.0f;
+				time[7]=TIME_SAVE.time7/1000.0f;
 				
 				
-				//speed[1] = 100* senor_length / time[1] ; //1000倍的m/s
-				speed[2] = 100* senor_length / time[2] ;
-				speed[3] = 100* senor_length / time[3] ;
-				speed[4] = 100* senor_length / time[4] ; //1000倍的m/s
-				speed[5] = 100* senor_length / time[5] ;
-				speed[6] = 100* senor_length / time[6] ;
-				speed[7] = 100* senor_length / time[7] ;
+				//speed[1] = 100* senor_length / time[1] ; //m/s
+				speed[2] =  senor_length / time[2] /10 ;
+				speed[3] =  senor_length / time[3] /10;
+				speed[4] =  senor_length / time[4] /10; 
+				speed[5] =  senor_length / time[5] /10;
+				speed[6] =  senor_length / time[6] /10;
+				speed[7] =  senor_length / time[7] /10;
 				
 				//a[1] = 100*2 * senor_length*(time[1] - time[2])/((time[1]+time[2])*time[1]*time[2]);// 10的6倍的m/s方 //第二个传感器时刻的加速度
 				a[2] = 100*2 * senor_length*(time[2] - time[3])/((time[3]+time[2])*time[3]*time[2]);//该加速度瞬时时刻为精确值
@@ -145,7 +145,7 @@ int main(void)
 				
 							
 							OLED_ShowNum(6,0,i,3,16);
-							OLED_ShowString(40,0,(u8*)v[i],16);
+							OLED_ShowString(40,0,(u8*)t[i],16);
 							OLED_ShowChar(5,0,'t',16);
 							
 							OLED_ShowNum(6,3,i,3,16);
